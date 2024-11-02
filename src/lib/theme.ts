@@ -77,8 +77,8 @@ export const defaultTheme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: "none",
-        },
-      },
-    },
-  },
+        }
+      }
+    }
+  }
 });

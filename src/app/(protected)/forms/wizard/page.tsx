@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
-import FormStepper from "./form-stepper";
+import CustomerWizard from "./customer";
 
 const FormWizardPage = () => {
   return (
-    <Box sx={{mt: 2}}>
-      <FormStepper />
+    <Box sx={{ mt: 2 }}>
+      <CustomerWizard/>
     </Box>
   );
 };
