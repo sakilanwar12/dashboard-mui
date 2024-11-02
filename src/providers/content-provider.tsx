@@ -1,8 +1,9 @@
+import { Container } from '@mui/material'
 import React from 'react'
 
 const ContentProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>{children}</div>
+    <Container>{children}</Container>
   )
 }
 
