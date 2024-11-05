@@ -1,33 +1,49 @@
 import { createTheme } from "@mui/material/styles";
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
+
+declare module "@mui/material/styles" {
+  interface Palette {
+    danger: Palette["primary"];
+  }
+  interface PaletteOptions {
+    danger?: PaletteOptions["primary"];
+  }
+}
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    danger: true;
+  }
+}
 
 export const defaultTheme = createTheme({
   palette: {
     primary: {
       light: "#757ce8",
-      main: "#3f50b5",
+      main: "#8b5cf6",
       dark: "#002884",
       contrastText: "#fff",
     },
     secondary: {
       light: "#ff7961",
-      main: "#f44336",
+      main: "#9ca3af",
       dark: "#ba000d",
-      contrastText: "#000",
-    },
-    error: {
-      main: "#f44336",
-      contrastText: "#fff",
-    },
-    warning: {
-      main: "#ff9800",
-      contrastText: "#000",
-    },
-    info: {
-      main: "#2196f3",
       contrastText: "#fff",
     },
     success: {
-      main: "#4caf50",
+      main: "#22c55e",
+      contrastText: "#fff",
+    },
+    info: {
+      main: "#06b6d4",
+      contrastText: "#fff",
+    },
+    warning: {
+      main: "#f97316",
+      contrastText: "#fff",
+    },
+    danger: {
+      main: "#ef4444",
       contrastText: "#fff",
     },
     background: {
@@ -40,6 +56,7 @@ export const defaultTheme = createTheme({
     },
   },
   typography: {
+    fontFamily: inter.style.fontFamily,
     fontSize: 14,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
@@ -70,15 +87,34 @@ export const defaultTheme = createTheme({
     caption: {
       fontSize: "0.75rem",
       fontWeight: 400,
-    }
+    },
   },
   components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          boxShadow: "none",
+          fontWeight: 500,
+          hover: {
+            boxShadow: "none",
+          }
+        
+        },
+      },
+  
+      defaultProps: {
+        color: "primary",
+        variant: "contained",
+      },
+    },
     MuiCard: {
       styleOverrides: {
         root: {
           boxShadow: "none",
-        }
-      }
-    }
-  }
+        },
+       
+      },
+    },
+  },
 });

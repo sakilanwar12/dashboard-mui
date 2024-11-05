@@ -1,20 +1,14 @@
 import { Input } from '@mui/material'
-import { useImperativeHandle } from 'react';
-import { useForm } from 'react-hook-form'
+import { useFormContext } from 'react-hook-form';
+import { IFormInputs } from './values';
 
-const Step2 = ({ onSubmit,ref }: { onSubmit: (data: any) => void }) => {
-  const { register, handleSubmit } = useForm();
-
-  useImperativeHandle(ref, () => ({
-    submit: () => handleSubmit(onSubmit)(),
-  }));
-
-
+const Step2 = () => {
+  const { register } = useFormContext<IFormInputs>();
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div>
       <Input placeholder="Title" {...register('title')} />
       <Input placeholder="desc" {...register('desc')} />
-    </form>
+    </div>
   );
 };
 
