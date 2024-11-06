@@ -89,7 +89,14 @@ export const defaultTheme = createTheme({
       fontWeight: 400,
     },
   },
+
   components: {
+    MuiContainer: {
+      defaultProps: {
+        maxWidth: "xl", 
+      },
+      
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -99,13 +106,13 @@ export const defaultTheme = createTheme({
           hover: {
             boxShadow: "none",
           }
-        
-        },
+        }
       },
   
       defaultProps: {
         color: "primary",
         variant: "contained",
+        size: "medium",
       },
     },
     MuiCard: {
