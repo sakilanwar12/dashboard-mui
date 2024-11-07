@@ -1,4 +1,5 @@
 "use client"
+
 import { defaultTheme } from "@/lib/theme";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material";
 

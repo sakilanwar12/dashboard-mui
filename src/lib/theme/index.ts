@@ -2,20 +2,6 @@ import { createTheme } from "@mui/material/styles";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
-declare module "@mui/material/styles" {
-  interface Palette {
-    danger: Palette["primary"];
-  }
-  interface PaletteOptions {
-    danger?: PaletteOptions["primary"];
-  }
-}
-declare module "@mui/material/Button" {
-  interface ButtonPropsColorOverrides {
-    danger: true;
-  }
-}
-
 export const defaultTheme = createTheme({
   palette: {
     primary: {
@@ -42,7 +28,7 @@ export const defaultTheme = createTheme({
       main: "#f97316",
       contrastText: "#fff",
     },
-    danger: {
+    error: {
       main: "#ef4444",
       contrastText: "#fff",
     },
@@ -93,9 +79,8 @@ export const defaultTheme = createTheme({
   components: {
     MuiContainer: {
       defaultProps: {
-        maxWidth: "xl", 
+        maxWidth: "xl",
       },
-      
     },
     MuiButton: {
       styleOverrides: {
@@ -105,10 +90,17 @@ export const defaultTheme = createTheme({
           fontWeight: 500,
           hover: {
             boxShadow: "none",
-          }
-        }
+          },
+        },
       },
-  
+
+      defaultProps: {
+        color: "primary",
+        variant: "contained",
+        size: "medium",
+      },
+    },
+    MuiButtonGroup: {
       defaultProps: {
         color: "primary",
         variant: "contained",
@@ -120,7 +112,6 @@ export const defaultTheme = createTheme({
         root: {
           boxShadow: "none",
         },
-       
       },
     },
   },

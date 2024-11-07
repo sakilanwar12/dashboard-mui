@@ -9,7 +9,7 @@ const BasicButton = () => {
         <Button color="success">Success</Button>
         <Button color="warning">Warning</Button>
         <Button color="info">Info</Button>
-        <Button color="danger">Danger</Button>
+        <Button color="error">Error</Button>
       </Box>
       <Box display="flex" gap="12px" flexWrap="wrap" sx={{mt:2}}>
         <Button>Primary</Button>
@@ -17,7 +17,7 @@ const BasicButton = () => {
         <Button color="success">Success</Button>
         <Button color="warning">Warning</Button>
         <Button color="info">Info</Button>
-        <Button color="danger">Danger</Button>
+        <Button color="error">Error</Button>
       </Box>
     </Box>
   );

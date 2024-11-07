@@ -20,8 +20,8 @@ const VariantButton = () => {
         <Button variant="text" color="warning">
           Warning
         </Button>
-        <Button variant="text" color="danger">
-          Danger
+        <Button variant="text" color="error">
+          Error
         </Button>
       </Box>
 
@@ -42,8 +42,8 @@ const VariantButton = () => {
         <Button variant="contained" color="warning">
           Warning
         </Button>
-        <Button variant="contained" color="danger">
-          Danger
+        <Button variant="contained" color="error">
+          error
         </Button>
       </Box>
 
@@ -63,8 +63,8 @@ const VariantButton = () => {
         <Button variant="outlined" color="warning">
           Warning
         </Button>
-        <Button variant="outlined" color="danger">
-          Danger
+        <Button variant="outlined" color="error">
+          Error
         </Button>
       </Box>
     </Stack>

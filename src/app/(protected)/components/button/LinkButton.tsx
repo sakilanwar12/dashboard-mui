@@ -8,7 +8,7 @@ const LinkButton = () => {
         <Button color="success"  href="#">Success</Button>
         <Button color="warning"  href="#">Warning</Button>
         <Button color="info"  href="#">Info</Button>
-        <Button color="danger"  href="#">Danger</Button>
+        <Button color="error"  href="#">Error</Button>
       </Box>
   );
 };
