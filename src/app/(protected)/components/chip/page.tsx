@@ -2,6 +2,7 @@ import Card from '@/components/ui/CodeSnippet';
 import { Box } from '@mui/material';
 import ColorChip from './ColorChip';
 import SizeChip from './SizeChip';
+import ChipVariant from './ChipVariant';
 
 const ChipPage = () => {
   return (
@@ -21,10 +22,9 @@ const ChipPage = () => {
       <Card title="Sizes">
         <SizeChip />
       </Card>
-
-      {/* 
-      incomplete :   Clickable and deletable 
-      */}
+      <Card title="Variant">
+        <ChipVariant />
+      </Card>
     </Box>
   );
 };
