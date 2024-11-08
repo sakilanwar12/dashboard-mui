@@ -4,7 +4,7 @@ const BasicButton = () => {
   return (
     <Box>
       <Box display="flex" gap="12px" flexWrap="wrap">
-        <Button>Primary</Button>
+        <Button color="primary">Primary</Button>
         <Button color="secondary">Secondary</Button>
         <Button color="success">Success</Button>
         <Button color="warning">Warning</Button>
