@@ -1,4 +1,5 @@
 
+import Header from "@/components/partial/Header";
 import AuthProvider from "@/providers/auth-provider";
 import ContentProvider from "@/providers/content-provider";
 import LayoutProvider from "@/providers/layout-provider";
@@ -11,6 +12,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
       <AuthProvider>
         <LayoutProvider>
           <CssBaseline />
+          <Header/>
           <ContentProvider>{children}</ContentProvider>
         </LayoutProvider>
       </AuthProvider>
