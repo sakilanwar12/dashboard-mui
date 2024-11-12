@@ -63,11 +63,11 @@ export const defaultTheme = createTheme({
       lineHeight: 1.2,
     },
     body1: {
-      fontSize: "1rem",
+      fontSize: "14px",
       lineHeight: 1.5,
     },
     body2: {
-      fontSize: "0.875rem",
+      fontSize: "12px",
       lineHeight: 1.43,
     },
     caption: {
@@ -111,6 +111,14 @@ export const defaultTheme = createTheme({
       styleOverrides: {
         root: {
           boxShadow: "none",
+        },
+      },
+    },
+
+    MuiListItemIcon: {
+      styleOverrides: {
+        root: {
+          minWidth: 36,
         },
       },
     },
