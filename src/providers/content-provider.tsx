@@ -1,12 +1,7 @@
-import { Box, Container } from "@mui/material";
-import React from "react";
+import { Box } from "@mui/material";
 
 const ContentProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <Container>
-      <Box sx={{ mt:10,mb: 2 }}> {children}</Box>
-    </Container>
-  );
+  return <Box sx={{ ml:"328px" }}> {children}</Box>;
 };
 
 export default ContentProvider;

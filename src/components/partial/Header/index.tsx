@@ -1,3 +1,4 @@
+"use client"
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { MenuIcon } from "lucide-react";
 
@@ -5,7 +6,7 @@ const Header = () => {
 
   return (
     <Box component="header" sx={{ flexGrow: 1 }}>
-      <AppBar component="nav" position="fixed" color="default" sx={{ top: 0 }}>
+      <AppBar component="nav"  color="default" >
         <Toolbar>
           <IconButton
             size="large"
