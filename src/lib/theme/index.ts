@@ -82,6 +82,22 @@ export const defaultTheme = createTheme({
         maxWidth: "xl",
       },
     },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          borderRadius:"0px"
+        },
+      }
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          borderRadius:"8px"
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -107,13 +123,7 @@ export const defaultTheme = createTheme({
         size: "medium",
       },
     },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          boxShadow: "none",
-        },
-      },
-    },
+ 
 
     MuiListItemIcon: {
       styleOverrides: {

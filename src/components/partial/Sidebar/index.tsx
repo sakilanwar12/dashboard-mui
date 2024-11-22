@@ -1,8 +1,11 @@
+import MercurySidebar from "./mercury-sidebar";
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
-  )
-}
+    <>
+      <MercurySidebar />
+    </>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

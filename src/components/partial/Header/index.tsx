@@ -1,29 +1,15 @@
 "use client"
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import { MenuIcon } from "lucide-react";
+
+import { Card, CardContent } from "@mui/material";
 
 const Header = () => {
 
   return (
-    <Box component="header" sx={{ flexGrow: 1 }}>
-      <AppBar component="nav"  color="default" >
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          DashMUI
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <Card component="header" sx={{mt:"16px"}}>
+      <CardContent component="nav" color="default"  >
+        Header
+      </CardContent>
+    </Card>
   );
 };
 
