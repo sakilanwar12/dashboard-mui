@@ -2,14 +2,22 @@
 
 import DarkLogo from "@/components/logos/dark-logo";
 import { getMenus } from "@/lib/menus";
-import { Box, List, Paper } from "@mui/material";
-import React from "react";
+import { Box, List, ListItemButton, ListItemIcon, Paper } from "@mui/material";
+import { Fragment, useMemo } from "react";
 import GroupLabel from "../common/group-label";
 import MenuItem from "../common/menu-item";
-import SubmenuHandler from "./submenu-handler";
+import { Menu } from "@/lib/menus/types";
+import SubMenuItem from "../common/sub-menu-item";
+import {
+  SubMenuContent,
+  SubMenuWrapper,
+  SubMenuTrigger,
+} from "../common/submenu-helpers";
+import { ChevronDownIcon } from "lucide-react";
 
 const MercurySidebar = () => {
-  const menus = getMenus();
+  const menus: Menu[] = useMemo(() => getMenus(), []);
+
   return (
     <Paper
       sx={{
@@ -21,15 +29,48 @@ const MercurySidebar = () => {
       }}
     >
       <DarkLogo />
-      {menus.map((group, groupIndex) => (
+      {menus.map(({ groupLabel, menus: groupMenus }, groupIndex) => (
         <Box key={groupIndex}>
-          {group.groupLabel && <GroupLabel>{group.groupLabel}</GroupLabel>}
+          {groupLabel && <GroupLabel>{groupLabel}</GroupLabel>}
+
           <List component="ul" dense>
-            {group.menus.map((menu, index) => {
-              if (menu.subMenus) {
-               return "Submenu"
-              }
-              return <MenuItem key={index} {...menu} />;
+            {groupMenus.map(({ subMenus, label, ...menu }, index) => {
+              const submenuKey = `submenu-${groupIndex}-${index}`;
+              return subMenus ? (
+                <Fragment key={submenuKey}>
+                  <SubMenuWrapper>
+                    <SubMenuTrigger>
+                      {(isOpen) => (
+                        <ListItemButton>
+                          {label}
+                          <ListItemIcon
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                              transformOrigin: "center", 
+                              transition: "transform 0.3s ease-in-out", 
+                            }}
+                          >
+                            <ChevronDownIcon />
+                          </ListItemIcon>
+                        </ListItemButton>
+                      )}
+                    </SubMenuTrigger>
+                    <SubMenuContent>
+                      {subMenus.map((submenu, index) => (
+                        <SubMenuItem
+                          key={`${submenuKey}-${index}`}
+                          {...submenu}
+                        />
+                      ))}
+                    </SubMenuContent>
+                  </SubMenuWrapper>
+                </Fragment>
+              ) : (
+                <MenuItem key={index} label={label} {...menu} />
+              );
             })}
           </List>
         </Box>
